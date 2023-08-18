@@ -1,31 +1,63 @@
-<html>
-  <head>
-    <title>Calculator</title>
-  </head>
-  <body>
-    <form>
-      <input type="text" id="result"/>
-      <br><br>
-      <input type="button" value="1" onclick="document.getElementById('result').value+='1'"/>
-      <input type="button" value="2" onclick="document.getElementById('result').value+='2'"/>
-      <input type="button" value="3" onclick="document.getElementById('result').value+='3'"/>
-      <input type="button" value="+" onclick="document.getElementById('result').value+='+'"/>
-      <br>
-      <input type="button" value="4" onclick="document.getElementById('result').value+='4'"/>
-      <input type="button" value="5" onclick="document.getElementById('result').value+='5'"/>
-      <input type="button" value="6" onclick="document.getElementById('result').value+='6'"/>
-      <input type="button" value="-" onclick="document.getElementById('result').value+='-'"/>
-      <br>
-      <input type="button" value="7" onclick="document.getElementById('result').value+='7'"/>
-      <input type="button" value="8" onclick="document.getElementById('result').value+='8'"/>
-      <input type="button" value="9" onclick="document.getElementById('result').value+='9'"/>
-      <input type="button" value="*" onclick="document.getElementById('result').value+='*'"/>
-      <br>
-      <input type="button" value="c" onclick="document.getElementById('result').value=''"/>
-      <input type="button" value="0" onclick="document.getElementById('result').value+='0'"/>
-      <input type="button" value="=" onclick="document.getElementById('result').value=eval(document.getElementById('result').value)"/>
-      <input type="button" value="/" onclick="document.getElementById('result').value+='/'"/>
-      <br>
-    </form>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Writer Profile</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  .profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .profile img {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  .profile-details {
+    flex: 1;
+  }
+</style>
+</head>
+<body>
+  <div class="profile">
+    <img src="writer_photo.jpg" alt="Writer's Photo">
+    <div class="profile-details">
+      <h1>WRITER</h1>
+      <h2>Lee, GilWoo (Pen Name: FreeMan)</h2>
+      <p>
+        1994. 02. Graduated from MyongJi University,
+        Department of Business Administration
+      </p>
+      <p>
+        1999. 06. ~ 2003. 11. Internet Contents Business
+      </p>
+      <p>
+        2003. 12. ~ 2017. 05. Worked in Korea, Guatemala, Vancouver(lived), Mongolia,
+        and China(Main)
+      </p>
+      <p>
+        2020. 02. Graduated from Korea National Open University,
+        Department of Law
+      </p>
+      <p>
+        2022. 02. Graduated from Korea National Open University,
+        Department of English Literature
+      </p>
+      <p>
+        Present:
+        <ul>
+          <li>Korea National Open University, Department of Computer Science</li>
+          <li>Headhunter(Freelancer), Occupational Counselor</li>
+          <li>Amateur Marathoner</li>
+        </ul>
+      </p>
+    </div>
+  </div>
+</body>
 </html>
