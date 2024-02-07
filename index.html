@@ -1,94 +1,68 @@
-<!DOCTYPE html>
-
-<html
- 
-lang="en">
-
+<!DOCTYPE html> <!-- 문서 유형 선언 -->
+<html lang="en"> <!-- 언어 속성 지정 -->
 <head>
-
-<meta
- 
-charset="UTF-8">
-
-<meta
- 
-name="viewport"
- 
-content="width=device-width, initial-scale=1.0">
-
-<title>Writer Profile</title>
-<style>
- body {
-  font-family: Arial, sans-serif;
- }
- .profile {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
- }
- .profile img {
-  width: 200px;
-  height: auto;
-  border-radius: 50%;
-  margin-right: 20px;
- }
- .profile-details {
-  flex: 1;
- }
-  .navigation {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 20px;
-  }
-  .navigation a {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-left: 10px;
-    text-decoration: none;
-  }
-</style>
+  <meta charset="UTF-8"> <!-- 문자 인코딩 설정 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 뷰포트 설정 -->
+  <title>Writer Profile</title> <!-- 문서 제목 -->
+  <style>
+    body {
+      font-family: Arial, sans-serif; /* 기본 글꼴 설정 */
+    }
+    .profile {
+      display: flex; /* flexbox 레이아웃 사용 */
+      align-items: center; /* flexbox 항목을 수직 가운데 정렬 */
+      margin-bottom: 20px; /* 하단 여백 20px 추가 */
+    }
+    .profile img {
+      width: 200px; /* 너비 200px */
+      height: auto; /* 높이는 이미지 콘텐츠 기준 자동 조정 */
+      border-radius: 50%; /* 원형 이미지 */
+      margin-right: 20px; /* 오른쪽 여백 20px 추가 */
+    }
+    .profile-details {
+      flex: 1; /* flexbox에서 남은 공간 차지 */
+    }
+    .navigation {
+      display: flex; /* flexbox 레이아웃 사용 */
+      justify-content: flex-end; /* flexbox 항목을 오른쪽 끝으로 정렬 */
+      margin-bottom: 20px; /* 하단 여백 20px 추가 */
+    }
+    .navigation a {
+      padding: 10px; /* 여백 10px 추가 */
+      border: 1px solid #ccc; /* 1px 너비 회색 테두리 추가 */
+      border-radius: 5px; /* 모서리 둥글게 설정 */
+      margin-left: 10px; /* 왼쪽 여백 10px 추가 */
+      text-decoration: none; /* 링크 밑줄 제거 */
+    }
+  </style>
 </head>
 <body>
   <div class="navigation">
-    <a href="https://www.amazon.com/My-Mongolian-Son-Daddy-Korean-ebook/dp/B0CGGXGF3W/ref=sr_1_1?crid=3SCIE597NUH98&keywords=my+mongolian+son&qid=1692938190&sprefix=my+mongolian+son%2Caps%2C274&sr=8-1" target="_blank">My Mongolian Son</a>
-    <a href="DaumAddr.html">다음 주소 API</a>
-    <a href="htmltest.html">HTML 연습장</a>
+    <a href="https://www.amazon.com/My-Mongolian-Son-Daddy-Korean-ebook/dp/B0CGGXGF3W/ref=sr_1_1?crid=3SCIE597NUH98&keywords=my+mongolian+son&qid=1692938190&sprefix=my+mongolian+son%2Caps%2C274&sr=8-1" target="_blank">
+      My Mongolian Son
+    </a> <!-- 아마존 링크 -->
+    <a href="DaumAddr.html">도로명주소변환API</a> <!-- 다음 주소 API 링크 -->
+    <a href="htmltest.html">HTML 연습장</a> <!-- HTML 연습장 링크 -->
   </div>
- <div class="profile">
-  <img src="writer_photo.jpg" alt="Writer's Photo">
-  <div class="profile-details">
-   <h1>WRITER</h1>
-   <h2>Lee, GilWoo (Pen Name: FreeMan)</h2>
+  <div class="profile">
+    <img src="writer_photo.jpg" alt="Writer's Photo"> <!-- 작가 사진 -->
+    <div class="profile-details">
+      <h1>WRITER</h1> <!-- 작가 제목 -->
+      <h2>Lee, GilWoo (Pen Name: FreeMan)</h2> <!-- 작가 이름 및 필명 -->
+      <p>1994. 02. Graduated from MyongJi University, Department of Business Administration</p> <!-- 학력 -->
+      <p>1999. 06. ~ 2003. 11. Internet Contents Business</p> <!-- 경력 -->
+      <p>2003. 12. ~ 2017. 05. Worked in Korea, Guatemala, Vancouver(lived), Mongolia, and China(Main)</p> <!-- 국내외 근무 경력 -->
+      <p>2020. 02. Graduated from Korea National Open University, Department of Law</p> <!-- 학력 -->
+      <p>2022. 02. Graduated from Korea National Open University, Department of English Literature</p> <!-- 학력 -->
+      <p>Present:
+        <ul>
+          <li>Korea National Open University, Department of Computer Science</li> <!-- 현재 학위 과정 -->
+          <li>Headhunter(Freelancer), Occupational Counselor</li> <!-- 직업 -->
+          <li>Amateur Marathoner</li> <!-- 취미 -->
+        </ul>
+      </p>
    <p>
-    1994. 02. Graduated from MyongJi University,
-    Department of Business Administration
-   </p>
-   <p>
-    1999. 06. ~ 2003. 11. Internet Contents Business
-   </p>
-   <p>
-    2003. 12. ~ 2017. 05. Worked in Korea, Guatemala, Vancouver(lived), Mongolia,
-    and China(Main)
-   </p>
-   <p>
-    2020. 02. Graduated from Korea National Open University,
-    Department of Law
-   </p>
-   <p>
-    2022. 02. Graduated from Korea National Open University,
-    Department of English Literature
-   </p>
-   <p>
-    Present:
-    <ul>
-     <li>Korea National Open University, Department of Computer Science</li>
-     <li>Headhunter(Freelancer), Occupational Counselor</li>
-     <li>Amateur Marathoner</li>
-    </ul>
-   </p>
-   <p>
-    Works: <a href="https://www.amazon.com/My-Mongolian-Son-Daddy-Korean-ebook/dp/B0CGGXGF3W/ref=sr_1_1?crid=3SCIE597NUH98&keywords=my+mongolian+son&qid=1692938190&sprefix=my+mongolian+son%2Caps%2C274&sr=8-1" target="_blank">My Mongolian Son</a>
+    Works: <a href="https://www.amazon.com/My-Mongolian-Son-Daddy-Korean-ebook/dp/B0CGGXGF3W/ref=sr_1_1?crid=3SCIE597NUH98&keywords=my+mongolian+son&qid=1692938190&sprefix=my+mongolian+son%2Caps%2C274&sr=8-1" target="_blank">My Mongolian Son</a> <!-- 작품 링크 -->
    </p>
   </div>
  </div>
