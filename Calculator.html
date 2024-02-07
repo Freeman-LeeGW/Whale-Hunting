@@ -1,12 +1,36 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Calculator</title>
+    <title>Calculator</title> <!-- 문서 제목 설정 -->
+    <style>
+	  /* 결과 창의 스타일 설정 */
+      #result {
+        width: 240px; /* 결과 창의 너비 설정 */
+        height: 40px; /* 결과 창의 높이 설정 */
+        font-size: 24px; /* 결과 창의 글꼴 크기 설정 */
+      }
+      /* 버튼의 스타일 설정 */
+      input[type="button"] {
+        width: 60px; /* 버튼의 너비 설정 */
+        height: 40px; /* 버튼의 높이 설정 */
+        font-size: 18px; /* 버튼의 글꼴 크기 설정 */
+      }
+    </style>
   </head>
   <body>
     <form>
-      <input type="text" id="result"/>
+      <input type="text" id="result"/> <!-- 결과를 표시할 입력 상자 -->
       <br><br>
-      <input type="button" value="1" onclick="document.getElementById('result').value+='1'"/>
+      <!-- 숫자 및 연산자 버튼 -->
+      <!-- 숫자 버튼: 숫자 1을 표시하고 클릭 시, 입력 상자에 숫자 1을 추가하는 기능을 실행하는 버튼 -->
+	  <input type="button" value="1"        
+	  onclick="document.getElementById('result').value+='1'" />
+	  <!-- 버튼의 타입을 지정합니다. 여기서는 버튼임을 나타냅니다. -->
+	  <!-- 버튼에 표시될 값으로, 여기서는 숫자 1을 나타냅니다. -->
+	  <!-- 클릭 이벤트가 발생했을 때 실행될 JavaScript 코드입니다.
+                       document.getElementById('result')는 'result'라는 id를 가진 요소를 찾습니다.
+                       value+='1'은 해당 요소의 값에 '1'을 추가합니다. -->
+
       <input type="button" value="2" onclick="document.getElementById('result').value+='2'"/>
       <input type="button" value="3" onclick="document.getElementById('result').value+='3'"/>
       <input type="button" value="+" onclick="document.getElementById('result').value+='+'"/>
@@ -21,9 +45,19 @@
       <input type="button" value="9" onclick="document.getElementById('result').value+='9'"/>
       <input type="button" value="*" onclick="document.getElementById('result').value+='*'"/>
       <br>
-      <input type="button" value="c" onclick="document.getElementById('result').value=''"/>
+      <input type="button" value="c" onclick="document.getElementById('result').value=''"/> <!-- 'c' 버튼: 결과 지우기 -->
       <input type="button" value="0" onclick="document.getElementById('result').value+='0'"/>
-      <input type="button" value="=" onclick="document.getElementById('result').value=eval(document.getElementById('result').value)"/>
+      <!-- 등호 버튼: 결과 계산 -->
+	  <input type="button" value="="        
+	  onclick="document.getElementById('result').value=eval(document.getElementById('result').value)" />
+	  <!-- 버튼의 타입을 지정합니다. 여기서는 버튼임을 나타냅니다. -->
+	  <!-- 버튼에 표시될 값으로, 여기서는 등호 기호를 나타냅니다. -->
+	  <!-- 클릭 이벤트가 발생했을 때 실행될 JavaScript 코드입니다.
+						   document.getElementById('result')는 'result'라는 id를 가진 요소를 찾습니다.
+						   document.getElementById('result').value는 입력 상자의 값을 나타냅니다.
+						   eval() 함수는 문자열로 표현된 JavaScript 코드를 실행하여 결과를 계산합니다.
+						   따라서 document.getElementById('result').value의 값을 계산하고,
+						   결과를 다시 'result' 입력 상자에 표시합니다. -->
       <input type="button" value="/" onclick="document.getElementById('result').value+='/'"/>
       <br>
     </form>
