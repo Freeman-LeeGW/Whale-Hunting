@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+/* 결과 창의 스타일 설정 */
+#result {
+width: 240px; /* 결과 창의 너비 설정 */
+height: 40px; /* 결과 창의 높이 설정 */
+font-size: 24px; /* 결과 창의 글꼴 크기 설정 */
+}
+/* 버튼의 스타일 설정 */
+input[type="button"] {
+width: 60px; /* 버튼의 너비 설정 */
+height: 40px; /* 버튼의 높이 설정 */
+font-size: 18px; /* 버튼의 글꼴 크기 설정 */
+}
