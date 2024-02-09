@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<body>
+
+<div id="myPlot" style="width:100%;max-width:700px"></div>
+
+<script>
+const xArray = ["데이터과학과(예정)", "컴퓨터과학과", "영문학과", "법학과", "경영학과"];
+const yArray = [0.0, 4.0, 4.2, 3.7, 3.18];
+
+const data = [{
+  x:xArray,
+  y:yArray,
+  type:"bar",
+  orientation:"v",
+  marker: {color:"rgba(0,0,255,0.6)"}
+}];
+
+const layout = {title:"My Score"};
+
+Plotly.newPlot("myPlot", data, layout);
+</script>
+
+</body>
+</html>
