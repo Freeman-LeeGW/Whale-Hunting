@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간단한 게시판</title>
+    <style>
+        /* 스타일링 코드는 이곳에 작성합니다. */
+    </style>
+</head>
+<body>
+    <h1>간단한 게시판</h1>
+    
+    <form id="postForm">
+        <input type="text" id="title" placeholder="제목">
+        <textarea id="body" placeholder="내용"></textarea>
+        <button type="button" id="submitButton">게시</button>
+    </form>
+    
+    <ul id="postList"></ul>
+    
+    <script>
+        // 게시물 목록 가져오기 함수
+        function getPosts() {
+            fetch('https://6027f0fc4ebdc100176dfccf.mockapi.io/api/posts')
+                .then(response => response.json())
+                .then(posts => {
+                    const postList = document.getElementById('postList');
+                    postList.innerHTML = ''; // 이전의 게시물 목록을 모두 지웁니다.
+                    posts.reverse(); // 게시물 목록을 역순으로 정렬하여 맨 위에 최신 게시물이 오도록 합니다.
+                    posts.forEach(post => {
+                        const listItem = document.createElement('li');
+                        listItem.innerHTML = `
+                            <h2>${post.title}</h2>
+                            <p>${post.body}</p>
+                        `;
+                        postList.appendChild(listItem);
+                    });
+                });
+        }
+
+        // 페이지가 로드될 때 호출하여 초기 게시물 목록을 가져옵니다.
+        getPosts();
+
+        // 게시 버튼 클릭 이벤트 처리
+        document.getElementById('submitButton').addEventListener('click', function() {
+            createPost();
+        });
+
+        // 게시물 생성하기 함수
+        function createPost() {
+            const title = document.getElementById('title').value;
+            const body = document.getElementById('body').value;
+
+            fetch('https://6027f0fc4ebdc100176dfccf.mockapi.io/api/posts', {
+                method: 'POST',
+                body: JSON.stringify({
+                    title: title,
+                    body: body
+                }),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+            })
+            .then(response => response.json())
+            .then(newPost => {
+                const postList = document.getElementById('postList');
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <h2>${newPost.title}</h2>
+                    <p>${newPost.body}</p>
+                `;
+                // 맨 위에 추가되도록 insertBefore 메서드를 사용합니다.
+                postList.insertBefore(listItem, postList.firstChild);
+                
+                // 게시물을 추가한 후 입력 필드 초기화
+                document.getElementById('title').value = '';
+                document.getElementById('body').value = '';
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
