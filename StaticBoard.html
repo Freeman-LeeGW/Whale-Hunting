@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Bulletin Board</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        #post-form {
+            margin-bottom: 20px;
+        }
+        #posts {
+            list-style-type: none;
+            padding: 0;
+        }
+        .post {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple Bulletin Board</h1>
+
+    <!-- 글 작성 폼 -->
+    <form id="post-form">
+        <input type="text" id="author" placeholder="Your Name" required>
+        <textarea id="message" placeholder="Write your message..." required></textarea>
+        <button type="submit">Post</button>
+    </form>
+
+    <!-- 게시물 목록 -->
+    <ul id="posts"></ul>
+
+    <script>
+        // 게시물 추가 함수
+        function addPost(author, message) {
+            const postsElement = document.getElementById('posts');
+            const li = document.createElement('li');
+            li.classList.add('post');
+            li.innerHTML = `<strong>${author}:</strong> ${message}`;
+            postsElement.appendChild(li);
+        }
+
+        // 글 작성 폼 제출 시
+        document.getElementById('post-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // 기본 동작 방지
+
+            // 작성자와 메시지 가져오기
+            const authorInput = document.getElementById('author');
+            const messageInput = document.getElementById('message');
+            const author = authorInput.value;
+            const message = messageInput.value;
+
+            // 게시물 추가
+            addPost(author, message);
+
+            // 입력 필드 초기화
+            authorInput.value = '';
+            messageInput.value = '';
+        });
+    </script>
+</body>
+</html>
+
