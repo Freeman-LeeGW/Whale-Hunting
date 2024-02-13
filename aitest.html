@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenAI API 연결</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    // OpenAI API 액세스 키
+    const apiKey = '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'; // 여기에 자신의 API 키를 입력하세요
+
+    // OpenAI API 요청 함수
+    function requestOpenAI(text) {
+        $.ajax({
+            url: 'https://api.openai.com/v1/completions',
+            type: 'POST',
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.setRequestHeader('Authorization', 'Bearer ' + apiKey);
+            },
+            data: JSON.stringify({
+                model: 'text-davinci-003', // 사용할 모델 선택
+                prompt: text,
+                max_tokens: 50 // 생성할 토큰 수
+            }),
+            success: function(data) {
+                $('#output').text(data.choices[0].text);
+            },
+            error: function(xhr, status, error) {
+                console.error('Error:', status, error);
+            }
+        });
+    }
+
+    // 사용자 입력을 받아 OpenAI API로 전달하는 함수
+    $('#submitBtn').click(function() {
+        var inputText = $('#input').val();
+        requestOpenAI(inputText);
+    });
+});
+</script>
+</head>
+<body>
+<h1>OpenAI API를 사용하여 텍스트 생성</h1>
+<textarea id="input" rows="5" cols="50" placeholder="텍스트를 입력하세요..."></textarea>
+<br>
+<button id="submitBtn">제출</button>
+<p><strong>생성된 텍스트:</strong></p>
+<p id="output"></p>
+</body>
+</html>
